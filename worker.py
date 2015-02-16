@@ -4,6 +4,7 @@ import time
 import re
 import random
 from keys import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
+from quotes import quotes, hashtags
 
 from collections import defaultdict
 from datetime import datetime, timedelta
@@ -20,44 +21,7 @@ DELAY = 40
 #this is to deal with tweets bizarrely repeating
 EXPIRED_TIME = timedelta(minutes=2)
 
-URL_RE = ".+\..+"  # crude, but should handle most of what Pulak tweets
-
-quotes = ["Life is meaningless", 
-	"We're all gonna die eventually", 
-	"Ignore what I just said, I just wrote a gnarly riff", 
-	"You should use the @ordrin api",
-	"Life is meaningless",
-	"I hope you die",
-	"Lets rage in NYC!",
-	"Corner Tavern is pretty much my favorite place in the world",
-	"Yo, wanna go to a thrash show",
-	"Tobias and I are going to a thrash show",
-	"I didn't do my linear algebra homework",
-	"Get me a buffalo chicken wrap",
-	"I fucking hate Drake",
-	"tryna get some food?",
-	"I got up at 4 PM yo",
-	"The night isn't over yet",
-	"Let's get some brews",
-	"Let's rage",
-]
-
-hashtags = ["#LifeIsMeaningless",
-"#ThrashIsWack",
-"#NotAllCops",
-"#OldSchoolGaming",
-"#MyNameIsSamuel",
-"#RealWorldSwag",
-"#OrdrinPizza",
-"#BCWrapsForDays",
-"#TheLonelyCoder",
-"#SpellingSucks",
-"#EveryoneDies",
-"#WhoKnows",
-"#TheNameIsOrdrx",
-]
-
-FOOTERS = [random.choice(quotes), random.choice(hashtags)]
+URL_RE = ".+\..+"  # crude, but should handle most of what Sam tweets
 
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
