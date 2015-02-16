@@ -1,4 +1,4 @@
-TheRealSagnew is a twitter bot just for Sam Agnew @sagnewshreds
+TheRealSagnew is a twitter bot designed to follow Sam Agnew @sagnewshreds
 ==============================
 
 What Is This?
