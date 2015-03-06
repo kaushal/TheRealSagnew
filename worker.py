@@ -75,8 +75,8 @@ if __name__ == "__main__":
                 if tweet.text != last_tweets[user]:
                     last_tweets[user] = tweet.text
                     if(datetime.now() - tweet.created_at < EXPIRED_TIME):
-			FOOTERS = [random.choice(quotes), random.choice(hashtags)]
-			send_tweet(getAtMentions(tweet.text))
+                        FOOTERS = [random.choice(quotes), random.choice(hashtags)]
+                        send_tweet(getAtMentions(tweet.text))
                     else:
                         print "Got tweet but it was too old for", user
                         print tweet.text.encode('utf-8')
