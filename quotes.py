@@ -2,6 +2,7 @@
 
 quotes = [
     "Life is meaningless",
+    "Death is inevetable",
     "We're all gonna die eventually",
     "Ignore what I just said, I just wrote a gnarly riff",
     "You should use the @ordrin api",
@@ -23,7 +24,7 @@ quotes = [
 
 hashtags = [
     "#LifeIsMeaningless",
-    "#ThrashIsWack",
+    "#Thrash",
     "#NotAllCops",
     "#OldSchoolGaming",
     "#MyNameIsSamuel",

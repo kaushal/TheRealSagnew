@@ -7,6 +7,7 @@ from quotes import quotes, hashtags
 
 from collections import defaultdict
 from datetime import datetime, timedelta
+from randomsentence import get_sentence
 
 #this package seems outdated, but it was super simple to set up
 import tweepy
@@ -14,7 +15,8 @@ import tweepy
 ACCOUNTS = ["sagnewshreds"]
 
 #how often to check for new tweets (careful of twitter rate limiting)
-DELAY = 40
+DELAY = 60
+count = 501
 
 #how long until we don't consider a tweet new?
 #this is to deal with tweets bizarrely repeating
@@ -86,4 +88,8 @@ if __name__ == "__main__":
                 print "Error getting tweet for", user
                 traceback.print_exc()
             finally:
+                count = count + 1
                 time.sleep(DELAY)  # Avoid Twitter rate limiting
+        if count > 500:
+            count = 0
+            send_tweet(get_sentence())
